@@ -15,7 +15,7 @@ async function asyncRenderer(coins, container) {
   for (const coin of coins) {
     const responce = await fetch(`https://www.binance.com/api/v3/ticker/price?symbol=${coin.token}`);
     const jsonData = await responce.json();
-    const coinData = new Coin(jsonData, '.coin__template');
+    const coinData = new Coin(jsonData, '.coin__template', updatePriceHandler);
     coinsData[coin.token] = coinData.generateCoin();
   }
 
@@ -24,4 +24,16 @@ async function asyncRenderer(coins, container) {
   }
 }
 
+
+//setInterval(asyncRenderer(coins, coinsListElement), 1000);
 asyncRenderer(coins, coinsListElement);
+
+function updatePriceHandler(token, coin) {
+  console.log(coin);
+  api.getCoinData(token)
+    .then(res => {
+      console.log(res);
+      coin.updatePrice(res.price);
+    })
+  
+}
