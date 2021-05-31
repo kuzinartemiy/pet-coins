@@ -9,7 +9,16 @@
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body>
-  <ul class="coins"></ul>
+  <div class="content">
+    <ul class="coins"></ul>
+    <form id="add-form" action="#" class="form">
+      <h2 class="form__title">Add coin</h2>
+      <input name="token" type="text" class="form__input" placeholder="token" autocomplete="off">
+      <button type="submit" class="form__button">Add</button>
+    </form>
+    
+  </div>
+
 </body>
 
 <template class="coin__template">
@@ -17,7 +26,7 @@
     <div class="coin__info">
       <h2 class="coin__title"></h2>
       <p class="coin__price"></p>
-      <button class="coin__update-button">Delete</button>
+      <button class="coin__delete-button">Delete</button>
     </div>
   </li>
 </template>

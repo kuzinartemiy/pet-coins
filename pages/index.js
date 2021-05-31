@@ -1,5 +1,6 @@
 import { Api } from '../scripts/components/Api.js';
 import { Coin } from '../scripts/components/Coin.js';
+import { Form } from '../scripts/components/Form.js';
 
 const coinsListElement = document.querySelector('.coins');
 const api = new Api();
@@ -34,4 +35,17 @@ function updatePriceHandler(token, coin) {
   }, 2000)
 }
 
-// const interval = setInterval(() => console.log('tick'), 2000);
+const addForm = new Form('#add-form', addCoinHandler);
+addForm.setEventListeners();
+
+function addCoinHandler(coin) {
+  api.getCoinData(coin.token)
+    .then(responce => {
+      const coinData = new Coin(responce, '.coin__template', updatePriceHandler);
+      //const coinToPrepend = coinData.generateCoin();
+      coinsListElement.append(coinData.generateCoin());
+    })
+    .catch(error => {
+      alert('NO TOKEN TO ADD: ' + error);
+    })
+}

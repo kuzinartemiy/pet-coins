@@ -1,4 +1,4 @@
-.coin__update-button {
+.coin__delete-button {
   font-family: sans-serif;
   outline: none;
   border-radius: 3px;
@@ -16,6 +16,6 @@
   max-height: 50px;
 }
 
-.coin__update-button:hover {
+.coin__delete-button:hover {
   background-color: rgb(216, 216, 216);
 }
