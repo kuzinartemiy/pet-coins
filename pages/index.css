@@ -1,3 +1,5 @@
+@import url(../vendor/normalize.css);
+
 @import url(../blocks/coins/coins.css);
 
 @import url(../blocks/coin/coin.css);
