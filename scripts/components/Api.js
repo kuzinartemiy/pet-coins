@@ -3,11 +3,11 @@ export class Api {
 
     }
 
-    _getResponceData(resesponce){
-      if(!resesponce.ok) {
-        return Promise.reject(`Ошибка: ${resesponce.status}`);
+    _getResponceData(responce){
+      if(!responce.ok) {
+        return Promise.reject(`Ошибка: ${responce.status}`);
       }
-      return resesponce.json();
+      return responce.json();
     }
 
     async getCoinData(coin) {
@@ -15,8 +15,5 @@ export class Api {
         method: 'GET',
       })
       .then(this._getResponceData);
-      // .then(resolve => {
-      //   return resolve.json();
-      // })
     }
 }
