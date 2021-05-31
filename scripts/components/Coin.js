@@ -21,19 +21,26 @@ export class Coin {
   }
 
   generateCoin() {
-    this._setEventListeners();
+
+    //this._setEventListeners();
     this._coinElement.querySelector('.coin__title').textContent = this._token;
     this._coinElement.querySelector('.coin__price').textContent = this._price;
+    this._updatePriceHandler(this._token, this);
     return this._coinElement;
   }
 
-  _setEventListeners() {
-    this._updateButtonElement.addEventListener('click', () => {
-      this._updatePriceHandler(this._token, this);
-    })
-  }
+  // _setEventListeners() {
+  //   this._updateButtonElement.addEventListener('click', () => {
+  //     this._updatePriceHandler(this._token, this);
+  //   })
+  // }
 
   updatePrice(newPrice) {
+    if(this._coinPriceElement.textContent < newPrice) {
+      this._coinPriceElement.style.backgroundColor = '#1D9B53';
+    } else if (this._coinPriceElement.textContent > newPrice) {
+      this._coinPriceElement.style.backgroundColor = '#B9473F';
+    }
     this._coinPriceElement.textContent = newPrice;
   }
 }
