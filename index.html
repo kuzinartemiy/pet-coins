@@ -9,14 +9,23 @@
     <link rel="stylesheet" href="./pages/index.css">
   </head>
   <body>
-    <div class="content">
-      <ul class="coins"></ul>
-      <form id="add-form" action="#" class="form">
-        <h2 class="form__title">Add coin</h2>
-        <input name="token" type="text" class="form__input" placeholder="token" autocomplete="off">
-        <button type="submit" class="form__button">Add</button>
-      </form>
-    </div>
+    <main class="content">
+      <section class="coins">
+        <ul class="coins__list"></ul>
+        <button class="coins__add-coin-button">+</button>
+      </section>
+      <!-- popups -->
+      <div id="add-coin-popup" class="popup">
+        <div class="popup__container">
+          <form id="add-coin-form" action="#" class="popup__form">
+            <button type="button" class="popup__close-button">Close</button>
+            <h2 class="popup__title">Add coin</h2>
+            <input name="token" type="text" class="popup__form-input" placeholder="token" autocomplete="off">
+            <button type="submit" class="popup__save-button">Add</button>
+          </form>
+        </div>
+      </div>
+    </main>
   </body>
 
   <template class="coin__template">
@@ -24,7 +33,7 @@
       <div class="coin__info">
         <h2 class="coin__title"></h2>
         <p class="coin__price"></p>
-        <button class="coin__delete-button">Delete</button>
+        <button class="button coin__delete-button">Delete</button>
       </div>
     </li>
   </template>
