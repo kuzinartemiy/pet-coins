@@ -13,10 +13,11 @@ export class Form {
     return this._inputsData;
   }
 
-  setEventListeners(){
+  setEventListeners() {
     this._formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this._formSubmitHandler(this._getInputsData());
+      this._formElement.reset();
     })
   }
 }

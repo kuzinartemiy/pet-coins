@@ -1,12 +1,9 @@
 export class Coin {
-  constructor(coinData, placeTemplate, updatePriceHandler, deleteCoinHandler) {
+  constructor(coinData, placeTemplate, updatePriceHandler) {
     
     this._price = coinData.price;
     this._token = coinData.symbol;
-
     this._updatePriceHandler = updatePriceHandler;
-    this._deleteCoinHandler = deleteCoinHandler;
-
     this._templateSelector = placeTemplate;
     this._coinElement = this._getTemplate();
     this._coinTitleElement = this._coinElement.querySelector('.coin__title');
@@ -28,13 +25,14 @@ export class Coin {
 
     this._coinElement.querySelector('.coin__title').textContent = this._token;
     this._coinElement.querySelector('.coin__price').textContent = this._price;
-    this._updatePriceHandler(this._token, this);
+    this._setUpdateInterval();
     return this._coinElement;
   }
 
   _setEventListeners() {
     this._deleteButtonElement.addEventListener('click', () => {
-      this._deleteCoin();
+      this._coinElement.remove();
+      clearInterval(this._intervalID); 
     })
   }
 
@@ -47,7 +45,9 @@ export class Coin {
     this._coinPriceElement.textContent = newPrice;
   }
 
-  _deleteCoin() {
-    this._coinElement.remove();
+  _setUpdateInterval() {
+    this._intervalID = setInterval(() => {
+      this._updatePriceHandler(this._token, this);
+    }, 1000);
   }
 }

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetCoin</title>
-  <script type="module" src="pages/index.js"></script>
-  <link rel="stylesheet" href="./pages/index.css">
-</head>
-<body>
-  <div class="content">
-    <ul class="coins"></ul>
-    <form id="add-form" action="#" class="form">
-      <h2 class="form__title">Add coin</h2>
-      <input name="token" type="text" class="form__input" placeholder="token" autocomplete="off">
-      <button type="submit" class="form__button">Add</button>
-    </form>
-    
-  </div>
-
-</body>
-
-<template class="coin__template">
-  <li class="coin">
-    <div class="coin__info">
-      <h2 class="coin__title"></h2>
-      <p class="coin__price"></p>
-      <button class="coin__delete-button">Delete</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCoin</title>
+    <script type="module" src="./pages/index.js"></script>
+    <link rel="stylesheet" href="./pages/index.css">
+  </head>
+  <body>
+    <div class="content">
+      <ul class="coins"></ul>
+      <form id="add-form" action="#" class="form">
+        <h2 class="form__title">Add coin</h2>
+        <input name="token" type="text" class="form__input" placeholder="token" autocomplete="off">
+        <button type="submit" class="form__button">Add</button>
+      </form>
     </div>
-  </li>
-</template>
+  </body>
+
+  <template class="coin__template">
+    <li class="coin">
+      <div class="coin__info">
+        <h2 class="coin__title"></h2>
+        <p class="coin__price"></p>
+        <button class="coin__delete-button">Delete</button>
+      </div>
+    </li>
+  </template>
 </html>

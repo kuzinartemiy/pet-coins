@@ -6,6 +6,7 @@ const coinsListElement = document.querySelector('.coins');
 const api = new Api();
 const coins = [
   {token: 'BTCUSDT'},
+  {token: 'ETHUSDT'},
   {token: 'XRPUSDT'},
   {token: 'SHIBUSDT'},
   {token: 'DOGEUSDT'}
@@ -24,15 +25,14 @@ async function asyncRenderer(coins, container) {
   }
 }
 
-asyncRenderer(coins, coinsListElement);
-
-function updatePriceHandler(token, coin) {
-  setInterval(() => {
-    api.getCoinData(token)
-    .then(res => {
-      coin.updatePrice(res.price);
-    })
-  }, 2000)
+const updatePriceHandler = (token, coin) => {
+  api.getCoinData(token)
+  .then(res => {
+    coin.updatePrice(res.price);
+  })
+  .catch(error => {
+    console.log('TOKEN DATA: ' + error);
+  })
 }
 
 const addForm = new Form('#add-form', addCoinHandler);
@@ -42,10 +42,11 @@ function addCoinHandler(coin) {
   api.getCoinData(coin.token)
     .then(responce => {
       const coinData = new Coin(responce, '.coin__template', updatePriceHandler);
-      //const coinToPrepend = coinData.generateCoin();
       coinsListElement.append(coinData.generateCoin());
     })
     .catch(error => {
-      alert('NO TOKEN TO ADD: ' + error);
+      сonsole.log('NO TOKEN TO ADD: ' + error);
     })
 }
+
+asyncRenderer(coins, coinsListElement);
