@@ -1,0 +1,16 @@
+.coin__delete-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 3ms;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  background-image: url(../../../images/delete-icon.svg);
+}
+
+.coin__delete-button:hover {
+  /* background-color: rgb(216, 216, 216); */
+  opacity: .8;
+}

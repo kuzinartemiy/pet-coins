@@ -1,6 +1,6 @@
 export class Coin {
   constructor(coinData, placeTemplate, updatePriceHandler) {
-    
+    this._updateInterval = 2000;
     this._price = coinData.price;
     this._token = coinData.symbol;
     this._updatePriceHandler = updatePriceHandler;
@@ -38,9 +38,9 @@ export class Coin {
 
   updatePrice(newPrice) {
     if(this._coinPriceElement.textContent < newPrice) {
-      this._coinPriceElement.style.backgroundColor = '#1D9B53';
+      this._coinPriceElement.style.color = 'rgb(5, 177, 105)';
     } else if (this._coinPriceElement.textContent > newPrice) {
-      this._coinPriceElement.style.backgroundColor = '#B9473F';
+      this._coinPriceElement.style.color = 'rgb(223, 95, 103)';
     }
     this._coinPriceElement.textContent = newPrice;
   }
@@ -48,6 +48,6 @@ export class Coin {
   _setUpdateInterval() {
     this._intervalID = setInterval(() => {
       this._updatePriceHandler(this._token, this);
-    }, 1000);
+    }, this._updateInterval);
   }
 }

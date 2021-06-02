@@ -9,11 +9,13 @@ export class Popup {
 
   open() {
     this._popup.style.visibility = 'visible';
+    this._popup.style.opacity = '1'
     this._formElement.reset();
   }
 
   close() {
     this._popup.style.visibility = 'hidden';
+    this._popup.style.opacity = '0'
   }
 
   setEventListeners() {

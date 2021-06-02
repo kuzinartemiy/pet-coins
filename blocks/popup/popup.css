@@ -9,4 +9,6 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0,0,0,.5);
+  transition: visibility 0s, opacity 0.15s linear;
+  opacity: 0;
 }
