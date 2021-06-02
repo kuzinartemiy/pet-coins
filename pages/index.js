@@ -17,10 +17,11 @@ const coins = [
 const addCoinPopup = new Popup('#add-coin-popup', addCoinHandler);
 addCoinPopup.setEventListeners();
 
-
 addCoinButtonElement.addEventListener('click', () => {
   addCoinPopup.open();
 })
+
+const deletePopup = new Popup('#delete-coin-popup', deleteCoinHandler);
 
 async function asyncRenderer(coins, container) {
   const coinsData = {};
@@ -44,9 +45,6 @@ const updatePriceHandler = (token, coin) => {
     console.log('TOKEN DATA: ' + error);
   })
 }
-
-// const addForm = new Form('#add-coin-form', addCoinHandler);
-// addForm.setEventListeners();
 
 function addCoinHandler(coin) {
   api.getCoinData(coin.token)
