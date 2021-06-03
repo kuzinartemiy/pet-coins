@@ -1,5 +1,7 @@
 .coins__add-coin-button {
-  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 5px;
+  font-family:'Rubick', Arial, sans-serif;
   font-weight: bold;
   background-color: transparent;
   border: 1px solid black;

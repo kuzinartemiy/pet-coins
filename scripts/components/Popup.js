@@ -7,6 +7,10 @@ export class Popup {
     this._formSubmitHandler = formSubmitHandler;
   }
 
+  setSubmitHandler(newSubmitHandler) {
+    this._formSubmitHandler = newSubmitHandler;
+  }
+
   open() {
     this._popup.style.visibility = 'visible';
     this._popup.style.opacity = '1'
@@ -32,7 +36,7 @@ export class Popup {
   _getInputsData() {
     this._inputsData = {};
     this._inputs.forEach(input => {
-      this._inputsData[input.name] = input.value;
+      this._inputsData[input.name] = input.value.toUpperCase();
     })
     return this._inputsData;
   }

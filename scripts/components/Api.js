@@ -10,8 +10,8 @@ export class Api {
       return responce.json();
     }
 
-    async getCoinData(coin) {
-      return fetch (`https://www.binance.com/api/v3/ticker/price?symbol=${coin}`, {
+    async getCoinData(token, currency) {
+      return fetch (`https://www.binance.com/api/v3/ticker/price?symbol=${token}${currency}`, {
         method: 'GET',
       })
       .then(this._getResponceData);

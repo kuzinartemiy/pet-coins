@@ -1,4 +1,7 @@
 .popup__form-input {
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: 'Rubick', Arial, sans-serif;
   outline: none;
   margin-bottom: 20px;
 }

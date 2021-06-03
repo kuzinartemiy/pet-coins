@@ -1,4 +1,14 @@
 .popup__save-button {
-  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 5px;
+  font-family: 'Rubick', Arial, sans-serif;
   font-weight: bold;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.popup__save-button:hover {
+  background-color: rgb(216, 216, 216);
 }

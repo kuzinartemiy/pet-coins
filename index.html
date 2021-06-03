@@ -14,16 +14,25 @@
     </header>
     <main class="content">
       <section class="coins">
+        <div class="coins__loader"></div>
         <ul class="coins__list"></ul>
         <button class="coins__add-coin-button">Add new coin</button>
       </section>
+      
       <!-- popups -->
       <div id="add-coin-popup" class="popup">
         <div class="popup__container">
-          <form id="add-coin-form" action="#" class="popup__form">
+          <form id="add-coin-form" action="#" class="popup__form" novalidate>
             <button type="button" class="popup__close-button"></button>
             <h2 class="popup__title">Add coin</h2>
-            <input name="token" type="text" class="popup__form-input" placeholder="token" autocomplete="off">
+            <div class="popup__form-inputs">
+              <input name="token" type="text" class="popup__form-input" minlength="3" maxlength="5" placeholder="token" autocomplete="off">
+              <select name="currency" id="currency" class="popup__form-input">
+                <option value="USDT">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="RUB">RUB</option>
+              </select>
+            </div>
             <button type="submit" class="popup__save-button">Add</button>
           </form>
         </div>
@@ -43,8 +52,14 @@
   <template class="coin__template">
     <li class="coin">
       <div class="coin__info">
-        <h2 class="coin__title"></h2>
-        <p class="coin__price"></p>
+        <div class="coin__title-container">
+          <div class="coin__icon"></div>
+          <h2 class="coin__title"></h2>
+        </div>
+        <div class="coin__price-container">
+          <div class="coin__currency-icon"></div>
+          <p class="coin__price"></p>
+        </div>
         <button class="button coin__delete-button"></button>
       </div>
     </li>

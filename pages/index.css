@@ -9,16 +9,22 @@
 @import url(../blocks/coins/coins.css);
 @import url(../blocks/coins/__list/coins__list.css);
 @import url(../blocks/coins/__add-coin-button/coins__add-coin-button.css);
+@import url(../blocks/coins/__loader/coins__loader.css);
 
 @import url(../blocks/coin/coin.css);
+@import url(../blocks/coin/__title-container/coin__title-container.css);
+@import url(../blocks/coin/__icon/coin__icon.css);
 @import url(../blocks/coin/__info/coin__info.css);
 @import url(../blocks/coin/__title/coin__title.css);
 @import url(../blocks/coin/__delete-button/coin__delete-button.css);
 @import url(../blocks/coin/__price/coin__price.css);
+@import url(../blocks/coin/__price-container/coin__price-container.css);
+@import url(../blocks/coin/__currency-icon/coin__currency-icon.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__form/popup__form-input.css);
+@import url(../blocks/popup/__form-inputs/popup__form-inputs.css);
 @import url(../blocks/popup/__form-input/popup__form-input.css);
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
