@@ -20,6 +20,7 @@
 @import url(../blocks/coin/__price/coin__price.css);
 @import url(../blocks/coin/__price-container/coin__price-container.css);
 @import url(../blocks/coin/__currency-icon/coin__currency-icon.css);
+@import url(../blocks/coin/__change/coin__change.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
