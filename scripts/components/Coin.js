@@ -58,13 +58,16 @@ export class Coin {
 
     this._changePercent = (100 - (this._startPrice / newPrice) * 100).toFixed(3);
     if(this._changePercent < 0) {
+      this._coinChangeElement.textContent = `${this._changePercent}%`;
       this._coinChangeElement.style.color = 'rgb(223, 95, 103)';
     } else if(this._changePercent > 0) {
+      this._coinChangeElement.textContent = `+${this._changePercent}%`;
       this._coinChangeElement.style.color = 'rgb(5, 177, 105)';
     } else {
+      this._coinChangeElement.textContent = `${this._changePercent}%`;
       this._coinChangeElement.style.color = 'black';
     }
-    this._coinChangeElement.textContent = `${this._changePercent}%`;
+    
     
   }
 
