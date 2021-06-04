@@ -29,7 +29,7 @@ export class Coin {
     this._coinElement.querySelector('.coin__title').textContent = this._coinDataToken;
     this._coinElement.querySelector('.coin__price').textContent = this._price;
     this._coinElement.querySelector('.coin__icon').style.backgroundImage = `url(${this._coinIconUrl})`;
-    this._coinElement.querySelector('.coin__currency-icon').style.backgroundImage = `url(../../../images/${this._coinCurrency.toLowerCase()}.svg)`;
+    this._coinElement.querySelector('.coin__currency-icon').style.backgroundImage = `url(images/${this._coinCurrency.toLowerCase()}.svg)`;
     this._setUpdateInterval();
     return this._coinElement;
   }
