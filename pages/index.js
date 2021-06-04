@@ -23,7 +23,7 @@ const coins = [
   {token: 'ETH', currency: "USDT"},
   {token: 'XRP', currency: "USDT"},
   {token: 'SHIB', currency: "USDT"},
-  {token: 'DOGE', currency: "USDT"}
+  {token: 'DOGE', currency: "RUB"}
 ]
 
 const renderLoading = (isLoading) => {
